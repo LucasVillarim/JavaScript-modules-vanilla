@@ -15,7 +15,7 @@ let Header = {
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
-      <div class="collapse navbar-collapse w-25" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="navbar-link nav-link active text-dark" aria-current="page" href="#">Accenture</a>

@@ -21,10 +21,16 @@ html, body {
   position: absolute;
   bottom: 0;
   left: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100px;
+  clip-path: polygon(49% 45%, 100% 0, 100% 100%, 0 100%, 0 0);
 } 
 
 .footer-component-relative {
   position: relative;
+  clip-path: polygon(49% 45%, 100% 0, 100% 100%, 0 100%, 0 0);
 }
 
 .register-button {
