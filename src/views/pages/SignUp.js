@@ -65,10 +65,8 @@ let SignUp = {
           sessionStorage.setItem('name', nameValue);
           sessionStorage.setItem('email', loginValue);
           Cookies.set('@token', res.data.token, { expires: 1 });
-          
           location.replace('/#/dashboard');
         }
-
         return console.log(res.status);
       });
       

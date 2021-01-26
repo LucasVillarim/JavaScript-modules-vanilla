@@ -1,5 +1,11 @@
+import { isAuth } from '../../services/Auth.js';
+
 let Dash = {
   render: async () => {
+    const isLogged = sessionStorage.getItem('@token');
+    const routeRedirect = 'login';
+    const auth = await isAuth(isLogged, routeRedirect);
+
     let view = `
 <div class="container">
   <div class="container d-flex justify-content-center">
@@ -71,7 +77,18 @@ let Dash = {
 
     return view;
   },
-  after_render: async () => {}
+  after_render: async () => {
+    const focusDashButton = document.getElementById('dashLink');
+    const logoutBtn = document.getElementById('loginLink');
+
+    function logout() {
+      clearStorage();
+      redirectTo('');
+    }
+
+    logoutBtn.addEventListener('click', () => logout())
+
+  }
 }
 
 export default Dash;
