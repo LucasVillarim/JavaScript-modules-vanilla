@@ -3,7 +3,7 @@ import baseURL from '../../services/baseURL.js';
 let SignUp = {
   render: async () => {
     let view = `
-  <section class="container h-100 my-5">
+  <section class="container area h-100">
     <div class="row mt-5 mb-5">
       <div class="col-md-6 m-auto">
         <div class="fluid text-center pt-5">

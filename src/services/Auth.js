@@ -15,13 +15,17 @@ const redirectTo = (path) => {
 }
 
 const storeData = (userData) => {
-  const {token, usuario} = userData.data;
+  const {token, conta, usuario} = userData.data;
   Object.entries(usuario).map(element => {
     localStorage.setItem(element[0], element[1]);
     sessionStorage.setItem(element[0], element[1]);
 
     localStorage.setItem('@token', token);
     sessionStorage.setItem('@token', token);
+  })
+  Object.entries(conta).map(element => {
+    localStorage.setItem(element[0], element[1]);
+    sessionStorage.setItem(element[0], element[1]);
   })
   
 }

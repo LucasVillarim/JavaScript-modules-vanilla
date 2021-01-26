@@ -7,7 +7,7 @@ let Dash = {
     const auth = await isAuth(isLogged, routeRedirect);
 
     let view = `
-<div class="container">
+<div class="container area">
   <div class="container d-flex justify-content-center">
     <div class="card m-3" style="width: 18rem;">
       <img class="card-img-top" style="transform: scale(0.7)" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png">
@@ -80,6 +80,7 @@ let Dash = {
   after_render: async () => {
     const focusDashButton = document.getElementById('dashLink');
     const logoutBtn = document.getElementById('loginLink');
+    focusDashButton.classList.add('focus-bg');
 
     function logout() {
       clearStorage();

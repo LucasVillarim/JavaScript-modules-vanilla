@@ -5,8 +5,8 @@ import { storeData } from '../../services/Auth.js';
 let Login = {
   render: async () => {
     let view = `
-      <section class="container h-100 my-5">
-        <div class="row mt-5 mb-5">
+      <section class="container area h-100">
+        <div class="d-flex mt-5 mb-5">
           <div class="col-md-6 m-auto">
             <div class="fluid text-center pt-5">
               <h2>Bem-Vindo(a)! Faça o login</h2>
@@ -53,6 +53,7 @@ let Login = {
       })
       .then( res => {
         if (res.status === 200) {
+          console.log(res);
           storeData(res);
           location.replace('/#/dashboard');
           return res.status;
