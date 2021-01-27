@@ -9,6 +9,10 @@ html, body {
   padding-top: 134px;
 }
 
+/* BURGUER STYLES */
+
+
+
 /* HEADER */
 .header {
   background: #fff;
@@ -23,6 +27,10 @@ html, body {
   padding: 0 1em;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
   z-index: 100;
+}
+
+.logo h1 {
+  font-weight: 700;
 }
 
 .saldo {
@@ -180,6 +188,11 @@ html, body {
   }
 }
 
+/* DASHBOARD */
+.payments-container {
+  flex-wrap: wrap;
+}
+
 /* cards */
 .home-card {
   position:relative !important;
@@ -227,6 +240,140 @@ html, body {
 
 /* Navbar */
 
+/* CREDIT CARDS SECTION */
+.credit-cards--section {
+  background: #f9f9f9;
+  padding: 2em 0;
+  margin-top: 100px;
+}
+
+/* CREDIT CARD STYLES */
+.creditCard-body {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 172px;
+  border-radius: 16px;
+  perspective: 1000px;
+}
+
+.creditCard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.creditCard-body:hover .creditCard-inner {
+  transform: rotateY(180deg);
+}
+
+.creditCard-front, .creditCard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.creditCard-front {
+  padding: 1em;
+}
+
+.creditCard-back {
+  transform: rotateY(180deg);
+}
+
+.creditCard-title {
+  color: #fff;
+}
+
+.creditCard-middle {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 3em;
+}
+
+.creditCard-chip {
+  position: relative;
+  background: linear-gradient(90deg, rgba(212,170,63,1) 0%, rgba(203,145,64,1) 100%, rgba(208,166,40,1) 100%);
+  width: 50px;
+  height: 30px;
+  margin: 0 0 0 1em;
+  border: 0.5px solid rgb(49, 49, 49);
+  border-radius: 8px;
+}
+
+.creditCard-chip:before {
+  background: transparent;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 30%;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  transform: translate(-50%, -50%);
+}
+
+.creditCard-chip:after {
+  background: transparent;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  height: 100%;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  transform: translate(-50%, -50%);
+}
+
+.creditCard-circuit {
+  background:  rgba(203,145,64,1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 55%;
+  height: 55%;
+  border: 1px solid #000;
+  border-radius: 4px;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+}
+
+.creditCard-text {
+  color: #fff;
+}
+
+.creditCard-back--line {
+  background: rgb(41, 41, 41);
+  width: 100%;
+  height: 32px;
+  z-index: 2;
+  margin-top: 1em;
+}
+
+.creditCard-back--title {
+  color: #fff;
+}
 
 
+.gold-text {
+  color: #a17434;
+}
 
+.silver-text {
+  color: silver;
+}
+
+.light-bg {
+  background: #c4c4c4;
+}

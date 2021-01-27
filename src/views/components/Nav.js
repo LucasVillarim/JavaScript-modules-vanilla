@@ -9,7 +9,7 @@ let Header = {
 
     let view = `
                 ${isLogged ? `
-                  <span class="saldo">Saldo:${displaySaldo}</span>
+                  <span class="saldo fw-bold">Saldo: ${displaySaldo}</span>
                 ` : ''}
                 <header class="header">
                   <div class="logo d-flex align-items-center justify-content-between">
@@ -31,10 +31,15 @@ let Header = {
                         }
                     </div>
                   </div>
+
                 </header>
                 `
 
     // let view = `
+    //  ${isLogged ? `
+    //   <span class="saldo">Saldo:${displaySaldo}</span>
+    // ` : ''}
+    // <span class="saldo">Saldo:${displaySaldo}</span>
     // <header class="align-items-center p-3 px-md-4 mb-3 border-bottom shadow-sm">
     //   <nav class="navbar navbar-expand-lg navbar-white">
     //     <div class="container-fluid">
@@ -59,7 +64,9 @@ let Header = {
     //             <li class="nav-item">
     //             <a style="cursor: pointer;" class="navbar-link nav-link text-dark font-weight-bold" id="logoutLink">Logout</a>`
     //             :
-    //             ('<a style="cursor: pointer;" class="navbar-link nav-link text-dark font-weight-bold" id="loginLink">Login</a>')
+    //             `
+    //             <a style="cursor: pointer;" class="navbar-link nav-link text-dark font-weight-bold" id="registerLink">Register</a>
+    //             <a style="cursor: pointer;" class="navbar-link nav-link text-dark font-weight-bold" id="loginLink">Login</a>`
     //           }
     //           </li>
     //         </ul>

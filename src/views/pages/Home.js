@@ -11,14 +11,14 @@ let Home = {
           <p class="text-center">
             Treinamentos direcionados para o mercado de trabalho.
           </p>
-        </div>
-        ${ !isLogged ?
-          `<a href="/#/signup">
-            <button class="register-button btn btn-dark">Cadastre-se</button>
-          </a>`
-          :
-          ``
-        }
+          </div>
+          ${ !isLogged ?
+            `<a href="/#/signup">
+              <button class="register-button btn btn-dark">Cadastre-se</button>
+            </a>`
+            :
+            ``
+          }
       </div>
       <div class="col-md-6 m-auto">
         <div class="fluid text-center pt-5">
@@ -33,8 +33,6 @@ let Home = {
     return view;
   },
   after_render: async () => {
-    // const focusHomeButton = document.getElementById('homeLink');
-    // focusHomeButton.classList.add('focus-bg');
   }
 }
 

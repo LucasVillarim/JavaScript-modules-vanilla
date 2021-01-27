@@ -1,3 +1,4 @@
+import { redirectTo, storeData } from '../../services/Auth.js';
 import baseURL from '../../services/baseURL.js';
 
 let SignUp = {
@@ -43,15 +44,13 @@ let SignUp = {
   },
   after_render: async () => {
     document.getElementById('submit_new_register').addEventListener('click', () => {
-      let cpfValue = document.getElementById('cpf').value.replace(/[^\d]/g, ""),
-          // idValue = document.getElementById('id').value,
-          loginValue = document.getElementById('login').value,
-          nameValue = document.getElementById('nome').value,
+      let cpfValue =      document.getElementById('cpf').value.replace(/[^\d]/g, ""),
+          loginValue =    document.getElementById('login').value,
+          nameValue =     document.getElementById('nome').value,
           passwordValue = document.getElementById('password').value
       
       axios.post(`${baseURL}usuarios`, {
         cpf: cpfValue, 
-        // id: idValue, 
         login: loginValue, 
         nome: nameValue, 
         senha: passwordValue 
@@ -62,10 +61,9 @@ let SignUp = {
       })
       .then((res) => {
         if (res.status === 200) {
-          sessionStorage.setItem('name', nameValue);
-          sessionStorage.setItem('email', loginValue);
+          storeData(res);
           Cookies.set('@token', res.data.token, { expires: 1 });
-          location.replace('/#/dashboard');
+          redirectTo('dashboard');
         }
         return console.log(res.status);
       });

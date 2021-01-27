@@ -47,23 +47,26 @@ let Login = {
       let nameValue = document.getElementById('usuario').value,
           passwordValue = document.getElementById('password').value
 
-      axios.post(`${baseURL}login`, {
-        usuario: nameValue, 
-        senha: passwordValue
-      })
-      .then( res => {
-        if (res.status === 200) {
-          console.log(res);
-          storeData(res);
-          location.replace('/#/dashboard');
-          return res.status;
-        } else {
-          alert('algo de errado aconteceu!');
-        }
+
+
+    axios.post(`${baseURL}login`, {
+          usuario: nameValue, 
+          senha: passwordValue
+        })
+        .then( res => {
+          if (res.status === 200) {
+            console.log(res);
+            storeData(res);
+            // localStorage.setItem('userDataAccount', res.data)
+            location.replace('/#/dashboard');
+            return res.status;
+          } else {
+            alert('algo de errado aconteceu!');
+          }
           
         }
-      );
-    });
+        ).catch(err => {console.log(err.error)});
+      });
   }
 }
 
