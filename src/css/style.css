@@ -5,6 +5,10 @@ html, body {
   box-sizing: border-box;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .area {
   padding-top: 134px;
 }

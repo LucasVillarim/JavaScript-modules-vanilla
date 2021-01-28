@@ -44,9 +44,9 @@ let SignUp = {
   },
   after_render: async () => {
     document.getElementById('submit_new_register').addEventListener('click', () => {
-      let cpfValue =      document.getElementById('cpf').value.replace(/[^\d]/g, ""),
-          loginValue =    document.getElementById('login').value,
-          nameValue =     document.getElementById('nome').value,
+      let cpfValue = document.getElementById('cpf').value.replace(/[^\d]/g, ""),
+          loginValue = document.getElementById('login').value,
+          nameValue = document.getElementById('nome').value,
           passwordValue = document.getElementById('password').value
       
       axios.post(`${baseURL}usuarios`, {
@@ -61,9 +61,7 @@ let SignUp = {
       })
       .then((res) => {
         if (res.status === 200) {
-          storeData(res);
-          Cookies.set('@token', res.data.token, { expires: 1 });
-          redirectTo('dashboard');
+          redirectTo('login');
         }
         return console.log(res.status);
       });

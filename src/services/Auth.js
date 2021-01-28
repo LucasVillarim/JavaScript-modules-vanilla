@@ -11,22 +11,30 @@ const clearStorage = () => {
 }
 
 const redirectTo = (path) => {
-  location.replace(`/#/${path}`);
+  window.location.replace(`/#/${path}`);
 }
 
 const storeData = (userData) => {
-  const {token, conta, usuario} = userData.data;
-  Object.entries(usuario).map(element => {
-    localStorage.setItem(element[0], element[1]);
-    sessionStorage.setItem(element[0], element[1]);
+  console.log(userData)
+  const {token, conta, usuario} = userData;
+  localStorage.setItem('usuario', JSON.stringify(usuario));
+  localStorage.setItem('conta', JSON.stringify(conta));
+  localStorage.setItem('@token', token);
 
-    localStorage.setItem('@token', token);
-    sessionStorage.setItem('@token', token);
-  })
-  Object.entries(conta).map(element => {
-    localStorage.setItem(element[0], element[1]);
-    sessionStorage.setItem(element[0], element[1]);
-  })
+  // redirectTo(route);
+
+
+  // Object.entries(usuario).map(element => {
+  //   localStorage.setItem(element[0], element[1]);
+  //   sessionStorage.setItem(element[0], element[1]);
+
+  //   localStorage.setItem('@token', token);
+  //   sessionStorage.setItem('@token', token);
+  // })
+  // Object.entries(conta).map(element => {
+  //   localStorage.setItem(element[0], element[1]);
+  //   sessionStorage.setItem(element[0], element[1]);
+  // })
   
 }
 

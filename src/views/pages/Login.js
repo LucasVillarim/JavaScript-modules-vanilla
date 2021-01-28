@@ -1,5 +1,5 @@
 import baseURL from '../../services/baseURL.js';
-import { storeData } from '../../services/Auth.js';
+import { storeData, redirectTo } from '../../services/Auth.js';
 
 
 let Login = {
@@ -43,11 +43,8 @@ let Login = {
   },
   after_render: async () => {
     document.getElementById('submit_login').addEventListener('click', () => {
-
-      let nameValue = document.getElementById('usuario').value,
-          passwordValue = document.getElementById('password').value
-
-
+    let nameValue = document.getElementById('usuario').value,
+        passwordValue = document.getElementById('password').value
 
     axios.post(`${baseURL}login`, {
           usuario: nameValue, 
@@ -55,17 +52,16 @@ let Login = {
         })
         .then( res => {
           if (res.status === 200) {
-            console.log(res);
-            storeData(res);
-            // localStorage.setItem('userDataAccount', res.data)
-            location.replace('/#/dashboard');
+            storeData(res.data);
+            redirectTo('dashboard');
+            location.reload();
             return res.status;
           } else {
             alert('algo de errado aconteceu!');
           }
           
         }
-        ).catch(err => {console.log(err.error)});
+        ).catch(err => {console.log(err)});
       });
   }
 }
